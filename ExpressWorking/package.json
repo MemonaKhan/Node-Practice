@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "mgdel": "nodemon DeleteApi/app.js",
     "sr": "nodemon SimpleRoutes/app.js",
     "mw": "nodemon Middlewares/app.js",
     "login": "nodemon HtmlLogin/app.js",
@@ -11,7 +12,6 @@
     "mgcrud": "nodemon MongoCRUD/app.js",
     "mglogin": "nodemon LoginApi/app.js",
     "mgpost": "nodemon PostApi/app.js",
-    "mgdel": "nodemon DeleteApi/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

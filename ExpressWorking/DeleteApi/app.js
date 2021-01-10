@@ -10,15 +10,10 @@ mongoose.connect('mongodb+srv://admin:NxZCUQCi1iG6wRTn@cluster0.xgemq.mongodb.ne
         useUnifiedTopology: true
     }
 );
-app.post('/user',jsonParser,function(req,res){
-    const data = new Users({
-        _id: new mongoose.Types.ObjectId(),
-        name: req.body.name,
-        email: req.body.email,
-        age: req.body.age,
-    });
-    data.save().then((result) => { res.send('Data saved') }).catch(err => res.send('Error'));
-    // res.send(req.body.name);
+app.delete('/user/:id',function(req,res){
+    Users.deleteOne({_id:req.params.id}).then((result)=>{res.status(200).send('User Deleted')}).catch((err)=>{res.status(404).send('Error Occures')})
+// res.status(200).json(result)
 });
 
 app.listen(8000);
+// {"_id":{"$oid":"5ffb156b8fd4ab39e8f57ee7"},"name":"James","email":"james@gmail.com","age":"27","__v":{"$numberInt":"0"}}

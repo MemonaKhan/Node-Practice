@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "mgdel": "nodemon DeleteApi/app.js",
+    "mgput": "nodemon UpdateApi/app.js",
     "sr": "nodemon SimpleRoutes/app.js",
     "mw": "nodemon Middlewares/app.js",
     "login": "nodemon HtmlLogin/app.js",

@@ -18,7 +18,7 @@ mongoose.connect('mongodb+srv://admin:NxZCUQCi1iG6wRTn@cluster0.xgemq.mongodb.ne
 );
 
 app.post('/signup', jsonParser, function (req, res) {
-    var cipher = crypto.createCipher(algo, key);
+    var cipher = crypto.createCipheriv(algo, key);
     var encrypted = cipher.update(req.body.pass, 'utf8', 'hex') + cipher.final('hex');
     const data = new Users({
         _id: new mongoose.Types.ObjectId(),
@@ -41,7 +41,7 @@ app.post('/login', jsonParser, function (req, res) {
     Users.findOne({
         email: req.body.email
     }).then((result) => {
-        var decipher = crypto.createDecipher(algo, key);
+        var decipher = crypto.createDecipheriv(algo, key);
         var decrypted = decipher.update(result.password, 'hex', 'utf8') + decipher.final('utf8');
         if (decrypted == req.body.pass) {
             jwt.sign({ result }, jwtkey, { expiresIn: '300s' }, (err, token) => {

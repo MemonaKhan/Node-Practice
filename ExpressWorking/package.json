@@ -7,7 +7,7 @@
     "mgrl": "nodemon RegisterLogin/app.js",
     "mgdel": "nodemon DeleteApi/app.js",
     "mgput": "nodemon UpdateApi/app.js",
-    "mgsearch": "nodemon SearchApi/app.js",
+    "mgsearch": "nodemon SearchApi/app.js", 
     "sr": "nodemon SimpleRoutes/app.js",
     "mw": "nodemon Middlewares/app.js",
     "login": "nodemon HtmlLogin/app.js",
